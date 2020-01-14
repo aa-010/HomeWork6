@@ -1,5 +1,5 @@
 
-str = "9.9"
+str = "9.8"
 
 list_version = []
 
@@ -10,16 +10,17 @@ for i in range(0, len(str)):
 
 print(list_version)
 
-for i in range(len(list_version)-1 , -1, -1):
-    if (list_version[i] + 1 != 10) and (i !=0):
-        list_version[i] += 1
-        break
-    elif (len(list_version) == 1):
+if (len(list_version) == 1):
         list_version[0] += 1
-    else:
-        list_version[i] = 0
-        list_version[i-1] += 1
-        break
+else:
+       for i in range(len(list_version)-1 , -1, -1):
+           if (list_version[i] + 1 != 10) and (i !=0):
+               list_version[i] += 1
+               break    
+           else:
+               list_version[i] = 0
+               list_version[i-1] += 1
+               break
 
 
 print(list_version)
